@@ -11,14 +11,14 @@ use Magento\Framework\View\Element\Template;
 
 class Button extends \Magento\Framework\View\Element\Template implements \Magento\Catalog\Block\ShortcutInterface
 {
-    const SANDBOX_BUTTON_URL = "https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png";
-    const LIVE_BUTTON_URL = "https://secure.checkout.visa.com/wallet-services-web/xo/button.png";
+    public const SANDBOX_BUTTON_URL = "https://sandbox.secure.checkout.visa.com/wallet-services-web/xo/button.png";
+    public const LIVE_BUTTON_URL = "https://secure.checkout.visa.com/wallet-services-web/xo/button.png";
 
     /**
      * @var \AuthorizeNet\VisaCheckout\Gateway\Config\Config
      */
     protected $config;
-    
+
     /**
      * @var \Magento\Framework\Math\Random
      */
@@ -64,11 +64,9 @@ class Button extends \Magento\Framework\View\Element\Template implements \Magent
 
         return '';
     }
-    
+
     /**
-     * Generate HTML
-     *
-     * @return html|null
+     * @inheritDoc
      */
     protected function _beforeToHtml()
     {
@@ -76,7 +74,7 @@ class Button extends \Magento\Framework\View\Element\Template implements \Magent
         $this->setShortcutHtmlId(
             $this->mathRandom->getUniqueHash('vc_button_')
         );
-        
+
         return parent::_beforeToHtml();
     }
 
@@ -89,7 +87,7 @@ class Button extends \Magento\Framework\View\Element\Template implements \Magent
     {
         return $this->config->isActive();
     }
-    
+
     /**
      * Get button image URL
      *
@@ -101,7 +99,7 @@ class Button extends \Magento\Framework\View\Element\Template implements \Magent
             ? self::SANDBOX_BUTTON_URL
             : self::LIVE_BUTTON_URL;
     }
-    
+
     /**
      * Get API key
      *

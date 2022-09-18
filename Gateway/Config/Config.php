@@ -16,15 +16,15 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
  */
 class Config extends \AuthorizeNet\Core\Gateway\Config\Config implements \AuthorizeNet\Core\Gateway\Config\ButtonConfigInterface
 {
-    const CODE = 'anet_visacheckout';
+    public const CODE = 'anet_visacheckout';
 
-    const KEY_CCTYPES = "cctypes";
-    const KEY_PAYMENT_ACTION = "payment_action";
-    const KEY_ALLOWSPECIFIC = "allowspecific";
-    const KEY_API_KEY = "api_key";
-    const KEY_DISABLE_PHONE_REQUIREMENT = 'disable_telephone_requirement';
-    const KEY_ENABLE_VC_PRODUCT_PAGE = 'enable_product_page_button';
-    const KEY_ENABLE_VC_CART = 'enable_cart_page_button';
+    public const KEY_CCTYPES = "cctypes";
+    public const KEY_PAYMENT_ACTION = "payment_action";
+    public const KEY_ALLOWSPECIFIC = "allowspecific";
+    public const KEY_API_KEY = "api_key";
+    public const KEY_DISABLE_PHONE_REQUIREMENT = 'disable_telephone_requirement';
+    public const KEY_ENABLE_VC_PRODUCT_PAGE = 'enable_product_page_button';
+    public const KEY_ENABLE_VC_CART = 'enable_cart_page_button';
 
     /**
      * Config Constructor

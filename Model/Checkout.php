@@ -12,9 +12,9 @@ use net\authorize\api\contract\v1\CustomerAddressType;
 
 class Checkout
 {
-    const PARAM_CALL_ID = 'callId';
-    const PARAM_ENC_PAYMENT_DATA = 'encPaymentData';
-    const PARAM_ENC_KEY = 'encKey';
+    public const PARAM_CALL_ID = 'callId';
+    public const PARAM_ENC_PAYMENT_DATA = 'encPaymentData';
+    public const PARAM_ENC_KEY = 'encKey';
 
     /**
      * @var \Magento\Payment\Gateway\CommandInterface
@@ -55,7 +55,7 @@ class Checkout
      * @var \Magento\Customer\Model\Session
      */
     protected $customerSession;
-    
+
     /**
      * @var \AuthorizeNet\VisaCheckout\Gateway\Config\Config
      */
@@ -183,7 +183,7 @@ class Checkout
 
         return $this->addressConverter->visaToMagentoAddress($decryptedData[$dataKey]);
     }
-    
+
     /**
      * Get VC Call id
      *
@@ -236,9 +236,9 @@ class Checkout
     public function updateBillingAddressData($data)
     {
         $address = $this->getQuote()->getBillingAddress();
-        
+
         $address->addData($data);
-        
+
         return $this;
     }
 
@@ -305,7 +305,7 @@ class Checkout
         if ($this->getCheckoutMethod() == \Magento\Checkout\Model\Type\Onepage::METHOD_GUEST) {
             $this->prepareGuest();
         }
-        
+
         if (!$this->gatewayConfig->isTelephoneRequired()) {
             $this->getQuote()->getBillingAddress()->setShouldIgnoreValidation(true);
             if (!$this->getQuote()->getIsVirtual()) {

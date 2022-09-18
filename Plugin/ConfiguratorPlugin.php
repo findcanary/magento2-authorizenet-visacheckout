@@ -9,7 +9,7 @@ namespace AuthorizeNet\VisaCheckout\Plugin;
 class ConfiguratorPlugin
 {
 
-    const PAYMENT_METHOD_VISACHECKOUT = 'VisaCheckout';
+    public const PAYMENT_METHOD_VISACHECKOUT = 'VisaCheckout';
 
     /**
      * @var \AuthorizeNet\VisaCheckout\Gateway\Config\Config

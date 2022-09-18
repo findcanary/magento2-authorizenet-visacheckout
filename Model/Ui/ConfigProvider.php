@@ -13,7 +13,7 @@ use Magento\Framework\Locale\ResolverInterface;
 
 class ConfigProvider implements ConfigProviderInterface
 {
-    const CODE = 'anet_visacheckout';
+    public const CODE = 'anet_visacheckout';
 
     /**
      * @var ResolverInterface
