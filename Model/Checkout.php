@@ -95,7 +95,7 @@ class Checkout
      *
      * @param \Magento\Quote\Model\Quote|null
      */
-    public function setQuote(\Magento\Quote\Model\Quote $quote = null)
+    public function setQuote(\Magento\Quote\Model\Quote|null $quote = null)
     {
         $this->quote = $quote;
         return $this;
@@ -337,9 +337,9 @@ class Checkout
     /**
      * Set customer session
      *
-     * @param \Magento\Customer\Model\Session $customerSession
+     * @param \Magento\Customer\Model\Session|null $customerSession
      */
-    public function setCustomerSession(\Magento\Customer\Model\Session $customerSession = null)
+    public function setCustomerSession(\Magento\Customer\Model\Session|null $customerSession = null)
     {
         $this->customerSession = $customerSession;
     }
