@@ -44,7 +44,7 @@ class PaymentInformationManagementPlugin
         \Magento\Checkout\Api\PaymentInformationManagementInterface $subject,
         $cartId,
         \Magento\Quote\Api\Data\PaymentInterface $paymentMethod,
-        \Magento\Quote\Api\Data\AddressInterface $billingAddress = null
+        \Magento\Quote\Api\Data\AddressInterface|null $billingAddress = null
     ) {
         $data = $this->handler->prepareData($cartId, $paymentMethod, $billingAddress);
         return array_merge([$cartId], $data);
