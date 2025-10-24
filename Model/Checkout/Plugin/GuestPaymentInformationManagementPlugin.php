@@ -55,7 +55,7 @@ class GuestPaymentInformationManagementPlugin
         $cartId,
         $email,
         \Magento\Quote\Api\Data\PaymentInterface $paymentMethod,
-        \Magento\Quote\Api\Data\AddressInterface $billingAddress = null
+        \Magento\Quote\Api\Data\AddressInterface|null $billingAddress = null
     ) {
         $quoteIdMask = $this->quoteIdMaskFactory->create()->load($cartId, 'masked_id');
         $data = $this->handler->prepareData($quoteIdMask->getQuoteId(), $paymentMethod, $billingAddress);
